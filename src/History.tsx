@@ -263,6 +263,10 @@ export interface WrappedActivityProps {
     onClickRetry: React.MouseEventHandler<HTMLAnchorElement>;
 }
 
+function refreshPage() {
+    window.location.reload(true);
+}
+
 export class WrappedActivity extends React.Component<WrappedActivityProps, {}> {
     public messageDiv: HTMLDivElement;
 
@@ -284,7 +288,7 @@ export class WrappedActivity extends React.Component<WrappedActivityProps, {}> {
                     <span>
                         { this.props.format.strings.messageFailed }
                         { ' ' }
-                        <a href="." onClick={ this.props.onClickRetry }>{ this.props.format.strings.messageRetry }</a>
+                        <a href="." onClick={ refreshPage }>{ this.props.format.strings.messageRetry }</a>
                     </span>;
                 break;
             default:

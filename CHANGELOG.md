@@ -1,113 +1,127 @@
 # Changelog
+
 All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+<!-- CHANGELOG line template
+### Added/Changed/Removed
+- Added something, by [@johndoe](https://github.com/johndoe), in PR [#XXX](https://github.com/Microsoft/BotFramework-WebChat/pull/XXX)
+
+### Changed (for dependency bumps)
+- `core`: Bumps to [`abc@1.2.3`](https://npmjs.com/package/abc/), in PR [#XXX](https://github.com/Microsoft/BotFramework-WebChat/pull/XXX)
+
+### Fixed
+- Fix [#XXX](https://github.com/Microsoft/BotFramework-WebChat/issues/XXX). Patched something, by [@johndoe](https://github.com/johndoe) in PR [#XXX](https://github.com/Microsoft/BotFramework-WebChat/pull/XXX)
+-->
+
 ## [Unreleased]
 ### Added
-- Translations
-  - `pt-BR`, by [Diego Castro](https://github.com/dfdcastro) in PR [#1074](https://github.com/Microsoft/BotFramework-WebChat/pull/1074)
-- Props to add `tabIndex` to activity in PR [#1161](https://github.com/Microsoft/BotFramework-WebChat/pull/1161)
+- Fix [#1383](https://github.com/Microsoft/BotFramework-WebChat/issues/1383). Added options to hide upload button, by [@compulim](https://github.com/compulim) in PR [#1491](https://github.com/Microsoft/BotFramework-WebChat/pull/1491)
+- Added support of avatar image, thru `styleOptions.botAvatarImage` and `styleOptions.userAvatarImage`, in PR [#1486](https://github.com/Microsoft/BotFramework-WebChat/pull/1486)
+- Added ability to style sendbox background and text color, thru `styleOptions.sendBoxBackground` and `styleOptions.sendBoxTextColor`, in PR [#1575](https://github.com/Microsoft/BotFramework-WebChat/pull/1575)
+- `core`: Added `sendEvent`, in PR [#1286](https://github.com/Microsoft/BotFramework-WebChat/pull/1286)
+- `core`: Added `CONNECT_FULFILLING` action to workaround `redux-saga` [design decision](https://github.com/redux-saga/redux-saga/issues/1651), in PR [#1286](https://github.com/Microsoft/BotFramework-WebChat/pull/1286)
 
 ### Changed
-- Bump `botframework-directlinejs` to `0.9.17` in PR [#1131](https://github.com/Microsoft/BotFramework-WebChat/pull/1131)
-- Fix `historyRef` cannot be focused because it is unmounted in Emulator, in PR [#1157](https://github.com/Microsoft/BotFramework-WebChat/pull/1157)
-- Fix for Chatdown that activities sent by the user are not displayed, in PR [#1162](https://github.com/Microsoft/BotFramework-WebChat/pull/1162)
-- Accessibility adjustment on History.tsx where clickable div is converted to button, by [@corinagum](https://github.com/corinagum) in PR [#1166](https://github.com/Microsoft/BotFramework-WebChat/pull/1166)
-- Fix so that carousel buttons are updated on load, by [@corinagum](https://github.com/corinagum) in PR [#1188](https://github.com/Microsoft/BotFramework-WebChat/pull/1188)
+- Moved `botAvatarImage` and `userAvatarImage` to `styleOptions.botAvatarImage` and `styleOptions.userAvatarImage` respectively, in PR [#1486](https://github.com/Microsoft/BotFramework-WebChat/pull/1486)
+- Fix string interpolation error in Russian localization and fallback for browsers without Intl support by [@odysseus1973](https://github.com/odysseus1973) in PR [#1509](https://github.com/Microsoft/BotFramework-WebChat/pull/1509)
+- `playground`: Bumps to [`botframework-directlinejs@0.10.0`](https://github.com/Microsoft/BotFramework-DirectLineJS/), in PR [#1511](https://github.com/Microsoft/BotFramework-WebChat/pull/1511)
+- `playground`: Bumps to [`react-scripts@2.1.1`](https://npmjs.com/package/react-scripts/), in PR [#1535](https://github.com/Microsoft/BotFramework-WebChat/pull/1535)
+- `*`: Bump to [`adaptivecards@1.1.2`](https://npmjs.com/package/adaptivecards/), in [#1558](https://github.com/Microsoft/BotFramework-WebChat/pull/1558)
 
-## [0.14.2] - 2018-08-16
-### Added
-- Add `disabled` props to disable all controls in PR [#988](https://github.com/Microsoft/BotFramework-WebChat/pull/988)
-- Add `role === 'user'` to `fromMe` check in [#1053](https://github.com/Microsoft/BotFramework-WebChat/pull/1053)
-
-### Changed
-- Update `PULL_REQUEST_TEMPLATE.md` [@corinagum](https://github.com/corinagum) in PR [#1065](https://github.com/Microsoft/BotFramework-WebChat/pull/1065)
-- Update WebRTC check by `navigator.getUserMedia` and `navigator.mediaDevices.getUserMedia`, by [@rosskyl](https://github.com/rosskyl) in [#1026](https://github.com/Microsoft/BotFramework-WebChat/pull/1026)
-
-## [0.14.1] - 2018-07-31
-### Added
-- Bump [`node-sass`](https://github.com/sass/node-sass) to 4.9.2, by [@corinagum](https://github.com/corinagum) in PR [#1043](https://github.com/Microsoft/BotFramework-WebChat/pull/1043)
-- Add TSLint, by [@adeogunsamuel](https://github.com/adeogunsamuel) in [#1017](https://github.com/Microsoft/BotFramework-WebChat/pull/1017)
-
-### Changed
-- Fix typo in `de-DE`, by [@jKelio](https://github.com/jKelio) in [#1022](https://github.com/Microsoft/BotFramework-WebChat/pull/1022)
-- Fix [#1045](https://github.com/Microsoft/BotFramework-WebChat/issues/1045) IE11 uploading twice, in [#1046](https://github.com/Microsoft/BotFramework-WebChat/pull/1046)
-- Fix [#949](https://github.com/Microsoft/BotFramework-WebChat/issues/949), [#972](https://github.com/Microsoft/BotFramework-WebChat/issues/972), and [#1030](https://github.com/Microsoft/BotFramework-WebChat/issues/1030) to bring [Markdown-It](https://github.com/markdown-it/markdown-it) to Adaptive Cards, in [#1034](https://github.com/Microsoft/BotFramework-WebChat/pull/1034)
-
-## [0.14.0] - 2018-06-26
-### Added
-- Standard and ES5-polyfill builds are now available on CDN
-   - Production build
-      - [https://cdn.botframework.com/botframework-webchat/latest/botchat.js](https://cdn.botframework.com/botframework-webchat/latest/botchat.js)
-      - [https://cdn.botframework.com/botframework-webchat/latest/botchat-es5.js](https://cdn.botframework.com/botframework-webchat/latest/botchat-es5.js)
-   - Development build
-      - [https://cdn.botframework.com/botframework-webchat/master/botchat.js](https://cdn.botframework.com/botframework-webchat/master/botchat.js)
-      - [https://cdn.botframework.com/botframework-webchat/master/botchat-es5.js](https://cdn.botframework.com/botframework-webchat/master/botchat-es5.js)
-
-### Changed
-- Fix [#997](https://github.com/Microsoft/BotFramework-WebChat/issues/997) to postpone size measurement while hidden, in [#1003](https://github.com/Microsoft/BotFramework-WebChat/pull/1003)
-- Fix [#1006](https://github.com/Microsoft/BotFramework-WebChat/issues/1006) links in README.md to reference `web-chat` instead of `webchat`, by [@AlexanderEllis](https://github.com/AlexanderEllis) in [#980](https://github.com/Microsoft/BotFramework-WebChat/pull/980)
-
-## [0.13.1] - 2018-05-01
-### Changed
-- Fix [#963](https://github.com/Microsoft/BotFramework-WebChat/issues/963) not to send empty `dgi.Groups` to Cognitive Services, in [#965](https://github.com/Microsoft/BotFramework-WebChat/pull/965)
-- Fix [#964](https://github.com/Microsoft/BotFramework-WebChat/issues/964) to include `.d.ts` in `tsconfig.json` instead of `<reference>`, in [#966](https://github.com/Microsoft/BotFramework-WebChat/pull/966)
-
-## [0.13.0] - 2018-04-26
-### Added
-- Support of `OAuthCard`, in [#954](https://github.com/Microsoft/BotFramework-WebChat/pull/954)
-### Changed
-- Updated [`botframework-directlinejs@0.9.15`](https://www.npmjs.com/package/botframework-directlinejs), in [#953](https://github.com/Microsoft/BotFramework-WebChat/pull/953)
-
-## [0.12.1] - 2018-04-16
-### Added
-- Add `listenFor` speech recognizer hint for both Cognitive Services and Web Speech API
-
-### Changed
-- Fix [#870](https://github.com/Microsoft/BotFramework-WebChat/issues/870) not to show empty bubble, in [#917](https://github.com/Microsoft/BotFramework-WebChat/pull/917)
-- Fix [#924](https://github.com/Microsoft/BotFramework-WebChat/issues/924) not showing upload button by default, in [#938](https://github.com/Microsoft/BotFramework-WebChat/pull/938)
-
-## [0.12.0] - 2018-03-21
-### Added
-- [#754](https://github.com/Microsoft/BotFramework-WebChat/issues/754) Customizable chat title thru `props.chatTitle`, either `true`/`false` or a string, by [@shade33](https://github.com/shade33) in [PR #810](https://github.com/Microsoft/BotFramework-WebChat/pull/810) and [PR #875](https://github.com/Microsoft/BotFramework-WebChat/pull/875)
-- [#798](https://github.com/Microsoft/BotFramework-WebChat/issues/798) Options to show/hide upload button thru `props.showUploadButton`, in [PR #883](https://github.com/Microsoft/BotFramework-WebChat/pull/883)
-- Packaging with source maps with inlined source, by [@PiWiBardy](https://github.com/PiWiBardy) in [PR #842](https://github.com/Microsoft/BotFramework-WebChat/pull/842) and [PR #878](https://github.com/Microsoft/BotFramework-WebChat/pull/878)
-- Translations
-  - `cs-cz`, by [Martin Simecek](https://github.com/msimecek) in [PR #809](https://github.com/Microsoft/BotFramework-WebChat/pull/809)
-  - `fi-fi`, by [Julius Suominen](https://github.com/jsur) in [PR #853](https://github.com/Microsoft/BotFramework-WebChat/pull/853)
-  - `fr-fr`, by [@jalamanac](https://github.com/jalamanac) in [PR #818](https://github.com/Microsoft/BotFramework-WebChat/pull/818)
-  - `nb-no`, by [Trond Aarskog](https://github.com/taarskog) in [PR #820](https://github.com/Microsoft/BotFramework-WebChat/pull/820)
-  - `nl-nl`, by [Mick Vleeshouwer](https://github.com/iMicknl) in [PR #821](https://github.com/Microsoft/BotFramework-WebChat/pull/821)
-  - `pl-pl`, by [Peter Blazejewicz](https://github.com/peterblazejewicz) in [PR #813](https://github.com/Microsoft/BotFramework-WebChat/pull/813)
-  - `zh-hans`, by [@Antimoney](https://github.com/Antimoney) in [PR #822](https://github.com/Microsoft/BotFramework-WebChat/pull/822) and [PR #823](https://github.com/Microsoft/BotFramework-WebChat/pull/823)
-- Promise polyfill with [bluebird](https://www.npmjs.com/package/bluebird) if needed in [#911](https://github.com/Microsoft/BotFramework-WebChat/pull/911)
-
-### Changed
-- Update dependencies
-  - [`adaptivecards@1.0.0`](https://www.npmjs.com/package/adaptivecards), in [PR #849](https://github.com/Microsoft/BotFramework-WebChat/pull/849) and [PR #899](https://github.com/Microsoft/BotFramework-WebChat/pull/899)
-  - [`http-server@0.10.0`](https://www.npmjs.com/package/http-server), in [PR #829](https://github.com/Microsoft/BotFramework-WebChat/pull/829)
-  - [`microsoft-speech-browser-sdk@0.0.12`](https://www.npmjs.com/package/microsoft-speech-browser-sdk), in [PR #888](https://github.com/Microsoft/BotFramework-WebChat/pull/888)
-  - [`nightmare@3.0.0`](https://www.npmjs.com/package/nightmare), in [PR #887](https://github.com/Microsoft/BotFramework-WebChat/pull/887)
-  - [`node-sass@4.7.2`](https://www.npmjs.com/package/node-sass), in [PR #873](https://github.com/Microsoft/BotFramework-WebChat/pull/873)
-- Fix: Safari on Mac speech synthesis by prefixing `AudioContext`, by [@DerPate2010](https://github.com/DerPate2010) in [PR #865](https://github.com/Microsoft/BotFramework-WebChat/pull/865)
-- Fix [#654](https://github.com/Microsoft/BotFramework-WebChat/issues/654): clicking microphone button too fast should not fail, by [@shahidkhuram](https://github.com/shahidkhuram) in [PR #657](#657), [PR #881](https://github.com/Microsoft/BotFramework-WebChat/pull/881) and [PR #895](https://github.com/Microsoft/BotFramework-WebChat/pull/895)
-- Fix [#894](https://github.com/Microsoft/BotFramework-WebChat/issues/894): Chrome not speaking malformed SSML on Adaptive Cards `speak` property, in [PR #895](https://github.com/Microsoft/BotFramework-WebChat/pull/895)
-- Fix [#866](https://github.com/Microsoft/BotFramework-WebChat/issues/866): unmount should not throw exception, in [PR #884](https://github.com/Microsoft/BotFramework-WebChat/pull/884)
-- Cleanup: `dependencies` and `devDependencies` in both `package.json` and `test/package.json` is much cleaner and independent of each other, in [PR #893](https://github.com/Microsoft/BotFramework-WebChat/pull/893)
-- Fix [#906](https://github.com/Microsoft/BotFramework-WebChat/issues/906): Add type="button" to `<button>`, in [#910](https://github.com/Microsoft/BotFramework-WebChat/pull/910)
+### Fixed
+- Fix [#1360](https://github.com/Microsoft/BotFramework-WebChat/issues/1360). Added `roles` to components of Web Chat, by [@corinagum](https://github.com/corinagum) in PR [#1462](https://github.com/Microsoft/BotFramework-WebChat/pull/1462)
+- Fix [#1409](https://github.com/Microsoft/BotFramework-WebChat/issues/1409). Added microphone status as screen reader only text, by [@corinagum](https://github.com/corinagum) in PR [#1490](https://github.com/Microsoft/BotFramework-WebChat/pull/1490)
+- Fix [#1605](https://github.com/Microsoft/BotFramework-WebChat/issues/1305), [#1316](https://github.com/Microsoft/BotFramework-WebChat/issues/1316), [#1341](https://github.com/Microsoft/BotFramework-WebChat/issues/1341), [#1411](https://github.com/Microsoft/BotFramework-WebChat/issues/1411). Fix color contrast ratios & downloadIcon narrator accessibility by [@corinagum](https://github.com/corinagum) in PR [#1494](https://github.com/Microsoft/BotFramework-WebChat/pull/1494)
+- Fix [#1264](https://github.com/Microsoft/BotFramework-WebChat/issues/1264), [#1308](https://github.com/Microsoft/BotFramework-WebChat/issues/1308), [#1318](https://github.com/Microsoft/BotFramework-WebChat/issues/1318), [#1334](https://github.com/Microsoft/BotFramework-WebChat/issues/1334),[#1425](https://github.com/Microsoft/BotFramework-WebChat/issues/1425). Update icons with accessibilty, Sent message accessibility, and fix sample README.md,  [@corinagum](https://github.com/corinagum) in PR [#1506](https://github.com/Microsoft/BotFramework-WebChat/pull/1506) and [#1542](https://github.com/Microsoft/BotFramework-WebChat/pull/1542)
+- Fix [#1512](https://github.com/Microsoft/BotFramework-WebChat/issues/1512). Fix #1512: fix sanitization of anchors (allow title attributes), by [@corinagum](https://github.com/corinagum) in PR [#1530](https://github.com/Microsoft/BotFramework-WebChat/pull/1530)
+- Fix [#1499](https://github.com/Microsoft/BotFramework-WebChat/issues/1499).
+  - Fix screen reader handling of name, activity, and timestamp,
+  - `connectCarouselFilmStrip`: Fixed `botAvatarInitials` and `userAvatarInitials` functionality from [recent name change](https://github.com/Microsoft/BotFramework-WebChat/pull/1486),
+  - `BasicTranscript`: Fixed user activity should not be recreated after receive ACK from Direct Line,
+  - by [@corinagum](https://github.com/corinagum) in PR [#1528](https://github.com/Microsoft/BotFramework-WebChat/pull/1528)
+- `component`: Fix [#1560](https://github.com/Microsoft/BotFramework-WebChat/issues/1560). Fixed carousel layout did not show date and alignment issues, by [@compulim](https://github.com/compulim) in PR [#1561](https://github.com/Microsoft/BotFramework-WebChat/pull/1561)
+- `playground`: Fix [#1562](https://github.com/Microsoft/BotFramework-WebChat/issues/1562). Fixed timestamp grouping "Don't group" and added "Don't show timestamp", by [@compulim](https://github.com/compulim) in PR [#1563](https://github.com/Microsoft/BotFramework-WebChat/pull/1563)
+- `component`: Fix [#1576](https://github.com/Microsoft/BotFramework-WebChat/issues/1576). Rich card without `tap` should be rendered properly, by [@compulim](https://github.com/compulim) in PR [#1577](https://github.com/Microsoft/BotFramework-WebChat/pull/1577)
+- `core`: Some sagas missed handling successive actions, in PR [#1286](https://github.com/Microsoft/BotFramework-WebChat/pull/1286)
+- `core`: `incomingActivitySaga` may throw null-ref exception if the first activity is from user, in PR [#1286](https://github.com/Microsoft/BotFramework-WebChat/pull/1286)
+- `component`: Fix [#1328](https://github.com/Microsoft/BotFramework-WebChat/issues/1328). Should not start microphone if input hint is set to `ignoringInput`, in PR [#1286](https://github.com/Microsoft/BotFramework-WebChat/pull/1286)
+- `component`: Fix outgoing typing indicators are not sent and acknowledged properly, in PR [#1286](https://github.com/Microsoft/BotFramework-WebChat/pull/1286)
+- Fix [#1402](https://github.com/Microsoft/BotFramework-WebChat/issues/1402). Add `messageBack` support, by [@corinagum](https://github.com/corinagum) in PR [#1581](https://github.com/Microsoft/BotFramework-WebChat/pull/1581)
+- Fix [#1539], outgoing typing indicators are not sent and acknowledged properly, in PR [#1541](https://github.com/Microsoft/BotFramework-WebChat/pull/1541)
+- `component`: Fix [#1547](https://github.com/Microsoft/BotFramework-WebChat/issues/1547). Fixed unhandled activity type should be forwarded to custom middleware, by [@compulim](https://github.com/compulim) in PR [#1569](https://github.com/Microsoft/BotFramework-WebChat/pull/1569)
 
 ### Removed
-- Deprecated `props.formatOptions.showHeader`, [use `props.chatTitle` instead](#formatoptionsshowheader-is-deprecated-use-chattitle-instead), in [PR #875](https://github.com/Microsoft/BotFramework-WebChat/pull/875)
-- [#855](https://github.com/Microsoft/BotFramework-WebChat/issues/855) NPM `postinstall` steps removed, by [@PiWiBardy](https://github.com/PiWiBardy) in [PR #879](https://github.com/Microsoft/BotFramework-WebChat/pull/879)
+- `botAvatarImage` and `userAvatarImage` props, as they are moved inside `styleOptions`, in PR [#1486](https://github.com/Microsoft/BotFramework-WebChat/pull/1486)
 
-# Deprecations
+### Samples
+- `core`: [Programmatic access to post activity](https://microsoft.github.io/BotFramework-WebChat/15.c.programmatic-post-activity/), in [#1568](https://github.com/Microsoft/BotFramework-WebChat/pull/1568)
+- `component`: [Hide upload button](https://microsoft.github.io/BotFramework-WebChat/05.d.hide-upload-button-styling/), in [#1491](https://github.com/Microsoft/BotFramework-WebChat/pull/1491)
+- `component`: [Avatar image](https://microsoft.github.io/BotFramework-WebChat/04.b.display-user-bot-images-styling/), in [#1486](https://github.com/Microsoft/BotFramework-WebChat/pull/1486)
+- `core`: [Incoming activity to JavaScript event](https://microsoft.github.io/BotFramework-WebChat/15.b.incoming-activity-event/), in [#1567](https://github.com/Microsoft/BotFramework-WebChat/pull/1567)
+- `core`: [Send welcome event](https://microsoft.github.io/BotFramework-WebChat/15.b.backchannel-send-welcome-event/), in PR [#1286](https://github.com/Microsoft/BotFramework-WebChat/pull/1286)
+- `core`: [Send typing indicator](https://microsoft.github.io/BotFramework-WebChat/07.b.customization-send-typing-indicator), in [#1541](https://github.com/Microsoft/BotFramework-WebChat/pull/1541)
+- `component`: [Password input activity](https://microsoft.github.io/BotFramework-WebChat/10.b.customization-password-input/), in [#1569](https://github.com/Microsoft/BotFramework-WebChat/pull/1569)
 
-## "formatOptions.showHeader" is deprecated, use "chatTitle" instead
+## [4.2.0] - 2018-12-11
+### Added
+- Build: Development build now include instrumentation code, updated build scripts
+   - `npm run build` will build for development with instrumentation code
+   - `npm run prepublishOnly` will build for production
+   - `npm run watch` will also run Webpack in watch loop
+- Build: Automated testing using visual regression testing technique in [#1323](https://github.com/Microsoft/BotFramework-WebChat/pull/1323)
+   - [Docker-based](https://github.com/SeleniumHQ/docker-selenium) automated testing using headless Chrome and [Web Driver](https://npmjs.com/packages/selenium-webdriver)
+   - Screenshot comparison using [`jest-image-snapshot`](https://npmjs.com/packages/jest-image-snapshot) and [`pixelmatch`](https://npmjs.com/package/pixelmatch)
+   - Code is instrumented using [`istanbul`](https://npmjs.com/package/istanbul)
+   - Test report is hosted on [Coveralls](https://coveralls.io/github/compulim/BotFramework-WebChat)
+- Added French localization, by [@tao1](https://github.com/tao1) in PR [#1327](https://github.com/Microsoft/BotFramework-WebChat/pull/1327)
+- Fix [#1344](https://github.com/Microsoft/BotFramework-WebChat/issues/1344), by updating `README.md` and adding validation logic for `userID` props, in [#1447](https://github.com/Microsoft/BotFramework-WebChat/pull/1447)
+   - If `userID` props present and also embedded in Direct Line token, will use the one from Direct Line token
+   - If `userID` props present, they must be string and not prefixed with `dl_`, to avoid confusion between `userID` props and Direct Line embedded user ID (which is forgery-proof)
+   - If `userID` props does not pass the validation test or not specified, Web Chat will use `default-user` instead
+- Added support for Cognitive Services Speech to Text and Text to Speech in PR [#1442](https://github.com/Microsoft/BotFramework-WebChat/pull/1442)
 
-`formatOptions` is a prop that contains `showHeader` only. The `showHeader` is a boolean flag that show/hide the chat title.
+### Changed
+- Core: Saga will run after custom middleware, in [#1331](https://github.com/Microsoft/BotFramework-WebChat/pull/1331)
+   - Custom middleware run before saga to allow user to modify default behavior
+- Build: Bump dependencies, in [#1303](https://github.com/Microsoft/BotFramework-WebChat/pull/1303)
+   - `@babel`
+      - `@babel/cli@7.1.2`
+      - `@babel/core@7.1.2`
+      - `@babel/plugin-proposal-class-properties@7.1.0`
+      - `@babel/plugin-proposal-object-rest-spread@7.0.0`
+      - `@babel/plugin-transform-runtime@7.1.0`
+      - `@babel/preset-env@7.1.0`
+      - `@babel/preset-react@7.0.0`
+      - `@babel/preset-typescript@7.1.0`
+      - `@babel/runtime@7.1.2`
+   - `concurrently@4.0.1`
+   - `jest`
+      - `babel-jest@23.6.0`
+      - `jest@23.6.0`
+      - `ts-jest@23.10.4`
+   - `typescript@3.1.6`
+   - `webpack`
+      - `webpack@4.24.0`
+      - `webpack-command@0.4.2`
+- Fix Russian localization by [@odysseus1973](https://github.com/odysseus1973) in PR [#1377](https://github.com/Microsoft/BotFramework-WebChat/pull/1377)
 
-Customizable chat title is a [popular](https://github.com/Microsoft/BotFramework-WebChat/issues/754) [ask](https://github.com/Microsoft/BotFramework-WebChat/pull/810), thus, we added it. But instead of using the original `showHeader`, which literally means a boolean. We added `chatTitle` instead. Since `formatOptions` contains only one option `showHeader`, we are deprecating `formatOptions` together.
+### Fixed
+- Fix [#1397](https://github.com/Microsoft/BotFramework-WebChat/issues/1397). Patched activities without `from` field, in PR [#1405](https://github.com/Microsoft/BotFramework-WebChat/pull/1405)
+- Fix [#1237](https://github.com/Microsoft/BotFramework-WebChat/issues/1237). Added new sample called `migration`, by [@corinagum](https://github.com/corinagum) in PR [#1398](https://github.com/Microsoft/BotFramework-WebChat/pull/1398)
+- Fix [#1332](https://github.com/Microsoft/BotFramework-WebChat/issues/1332). Updated sample names and add table to README, by [@corinagum](https://github.com/corinagum) in PR [#1435](https://github.com/Microsoft/BotFramework-WebChat/pull/1435)
+- Fix [#1125](https://github.com/Microsoft/BotFramework-WebChat/issues/1125). Added error handling for Adaptive Card JSON render, by [@corinagum](https://github.com/corinagum) in PR [#1395](https://github.com/Microsoft/BotFramework-WebChat/pull/1395)
+- Build: Webpack watch mode now emits non-minified code for shorter dev RTT, in [#1331](https://github.com/Microsoft/BotFramework-WebChat/pull/1331)
 
-You can set `chatTitle` to `true` (a default localized chat title), `false` (hide chat title), or a string of your preferred chat title.
+### Samples
+- Backchannel: [Inject custom data into every `POST_ACTIVITY`](https://microsoft.github.io/BotFramework-WebChat/15.backchannel-piggyback-on-outgoing-activities/), in [#1331](https://github.com/Microsoft/BotFramework-WebChat/pull/1331)
+- UI: [Minimizable Web Chat](https://microsoft.github.io/BotFramework-WebChat/12.customization-minimizable-web-chat/), in [#1290](https://github.com/Microsoft/BotFramework-WebChat/pull/1290)
+- Others: [Using Web Chat v3](https://microsoft.github.io/BotFramework-WebChat/webchat-v3/), in [#1287](https://github.com/Microsoft/BotFramework-WebChat/pull/1287)
+- Speech: [Cognitive Services Speech to Text and Text to Speech](https://github.com/Microsoft/BotFramework-WebChat/tree/master/samples/6.c.cognitive-services-speech-services-js) (both subscription key and authorization token flow)
+- Speech: [Cognitive Services Speech to Text using lexical result](https://github.com/Microsoft/BotFramework-WebChat/tree/master/samples/6.e.cognitive-services-speech-services-with-lexical-result) (text normalization)
+
+## [4.1.0] - 2018-10-31
+### Added
+- Initial release of Web Chat v4

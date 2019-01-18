@@ -1,0 +1,10 @@
+{
+  "lerna": "2.11.0",
+  "packages": [
+    "packages/*",
+    "samples/12.customization-minimizable-web-chat",
+    "samples/13.customization-speech-ui",
+    "samples/14.customization-piping-to-redux"
+  ],
+  "version": "0.0.0"
+}

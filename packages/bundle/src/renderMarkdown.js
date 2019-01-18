@@ -46,7 +46,7 @@ const SANITIZE_HTML_OPTIONS = {
 
 const customMarkdownIt = new MarkdownIt({
   breaks: true,
-  html: false,
+  html: true,
   linkify: true,
   typographer: true,
   xhtmlOut: true
